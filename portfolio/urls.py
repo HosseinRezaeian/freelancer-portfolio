@@ -1,10 +1,8 @@
 from django.urls import path
-from .views import get_portfolio
+from .views import Portfolio
+from django.conf import settings
+from django.conf.urls.static import static
 
-
-urlpatterns =[
-    path('',get_portfolio, name='profile')
-]
-
-
-
+urlpatterns = [
+                  path('', Portfolio.as_view(), name='profile')
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

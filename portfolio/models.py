@@ -7,7 +7,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Profile(models.Model):
     name = models.CharField(max_length=60)
-    pic = models.ImageField()
+    pic = models.ImageField(upload_to='profile/images')
+    pic2 = models.ImageField(upload_to='profile/images')
     birthday = models.DateField()
     experience = models.IntegerField()
     email = models.EmailField()
@@ -51,7 +52,7 @@ class EducationAndExpericence(models.Model):
     discription = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.title, ' ', self.categoryes
+        return self.title
 
 
 class Skills(models.Model):
