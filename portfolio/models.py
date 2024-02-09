@@ -81,7 +81,7 @@ class category_gallery(models.Model):
 
 
 class picture_gallery(models.Model):
-    picture = models.ImageField()
+    picture = models.ImageField(upload_to='profile/gallery')
     category = models.ForeignKey(category_gallery, on_delete=models.CASCADE)
 
     def __str__(self):
